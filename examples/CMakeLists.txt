@@ -1,0 +1,23 @@
+# See <https://learn.microsoft.com/en-us/windows/win32>
+# for information on Win32 API.  (As of Feb-2023).
+
+function(add_example name)
+    add_executable(${name} WIN32 ${name}.cpp)
+    target_link_libraries(${name} PUBLIC winlamb)
+    set_property(TARGET ${name} PROPERTY FOLDER "Examples")
+    cmake_parse_arguments("EX" "" "" "RESOURCES;SOURCES" ${ARGN})
+    if(EX_RESOURCES)
+	target_sources(${name} PRIVATE ${EX_RESOURCES})
+	set_source_files_properties(${EX_RESOURCES} PROPERTIES LANGUAGE RC)
+	source_group("Resource Files" REGULAR_EXPRESSION ".*\\.(rc|rc2)$")
+    endif()
+    if(EX_SOURCES)
+	target_sources(${name} PRIVATE ${EX_SOURCES})
+	source_group("Header Files" REGULAR_EXPRESSION ".*\\.(h|hpp)$")
+    endif()
+endfunction()
+
+add_example(1-main_window)
+add_subdirectory(2-dialog_main_window)
+add_subdirectory(3-dialog_controls)
+add_subdirectory(4-dialog_controls_mediator)
