@@ -2,7 +2,6 @@
 // Microsoft Visual C++ generated include file.
 // Used by 3-dialog_controls.rc
 //
-#define IDD_DIALOG1                     101
 #define IDD_MAIN                        101
 #define IDC_ACTION_TEXT                 1001
 #define IDC_ACTION_BUTTON               1002

@@ -1,5 +1,5 @@
-#include "dialog.h"
-#include "mediator.h"
+#include <dialog.h>
+#include <mediator.h>
 #include "resource.h"
 
 #include <winlamb/button.h>

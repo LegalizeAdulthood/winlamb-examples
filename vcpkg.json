@@ -3,6 +3,7 @@
   "name": "clip-snoop",
   "version": "1.0.0",
   "dependencies": [
+    "gtest",
     "winlamb"
   ]
 }
